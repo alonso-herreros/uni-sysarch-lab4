@@ -13,9 +13,15 @@ int main(int argc, char **argv) {
     rel_node_append(rel_llist, rel_node_create(4, "Peter Parker", "Spiderman"));
     rel_node_append(rel_llist, rel_node_create(5, "Tony Stark", "Ironman"));
 
+    printf("Initial linked list at %p: \n", rel_llist);
     rel_node_printa(rel_llist);
 
+    rel_node_t *rel_llist_copy = rel_node_copy(rel_llist);
+    printf("\nCopy of linked list at %p: \n", rel_llist_copy);
+    rel_node_printa(rel_llist_copy);
+
     rel_node_free(rel_llist);
+    rel_node_free(rel_llist_copy);
 
     return 0;
 }

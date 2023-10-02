@@ -50,3 +50,14 @@ rel_node_t *rel_node_append(rel_node_t *head, rel_node_t *node)
     current->next = node;
     return head;
 }
+
+
+rel_node_t *rel_node_copy(rel_node_t *node)
+{
+    rel_node_t *copy = malloc(sizeof(rel_node_t));
+    copy->id = node->id;
+    copy->real_name = strdup(node->real_name);
+    copy->common_name = strdup(node->common_name);
+    copy->next = node->next == NULL ? NULL : rel_node_copy(node->next);
+    return copy;
+}
