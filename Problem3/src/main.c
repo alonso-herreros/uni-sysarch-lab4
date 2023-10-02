@@ -12,7 +12,6 @@ int main(int argc, char **argv) {
     rel_node_append(rel_llist, rel_node_create(3, "Bruce Banner", "Hulk"));
     rel_node_append(rel_llist, rel_node_create(4, "Peter Parker", "Spiderman"));
     rel_node_append(rel_llist, rel_node_create(5, "Tony Stark", "Ironman"));
-
     printf("Initial linked list at %p: \n", rel_llist);
     rel_node_printa(rel_llist);
 
@@ -20,8 +19,22 @@ int main(int argc, char **argv) {
     printf("\nCopy of linked list at %p: \n", rel_llist_copy);
     rel_node_printa(rel_llist_copy);
 
+    rel_node_t *rel_llist2;
+    rel_llist2 = rel_node_create(6, "Eddie Brock", "Venom");
+    rel_node_append(rel_llist2, rel_node_create(7, "Stephen Strange", "Dr. Strange"));
+    rel_node_append(rel_llist2, rel_node_create(8, "Scott Lang", "AntMan"));
+    printf("\nSecond linked list at %p: \n", rel_llist2);
+    rel_node_printa(rel_llist2);
+
+    rel_node_t *rel_llist_mix = rel_node_mix(rel_llist, rel_llist2);
+    printf("\nMixed linked list at %p: \n", rel_llist_mix);
+    rel_node_printa(rel_llist_mix);
+
+
     rel_node_free(rel_llist);
     rel_node_free(rel_llist_copy);
+    rel_node_free(rel_llist2);
+    rel_node_free(rel_llist_mix);
 
     return 0;
 }
