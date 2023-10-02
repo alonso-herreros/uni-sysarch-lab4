@@ -1,8 +1,6 @@
 #ifndef REL_NODE_H
 #define REL_NODE_H
 
-#include "relationship.h"
-
 typedef struct node {
     int id;
     char *real_name;
