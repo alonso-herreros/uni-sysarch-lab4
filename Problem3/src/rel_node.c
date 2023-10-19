@@ -41,7 +41,6 @@ void rel_node_printa(rel_node_t *node)
 rel_node_t *rel_node_append(rel_node_t *head, rel_node_t *node)
 {
     if (head == NULL) {
-        printf("(Null head)\n");
         return node;
     }
     rel_node_t *current = head;
