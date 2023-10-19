@@ -11,3 +11,11 @@ gcc ./src/*.c -o ./bin/main -g -Wall
 chmod o+rx ./bin/main
 ./bin/main
 ```
+
+## Completion Summary
+
+| Problem | Status |
+| --- | --- |
+| Problem 1 | Done |
+| Problem 2 | Done |
+| Problem 3 | Done |
